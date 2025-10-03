@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Halaman <?= $data['judul']; ?></title>
 </head>
 <body>
     <div class="row">
@@ -12,8 +12,12 @@
 
             <?php foreach($data['mhs'] as $mhs) : ?>
                 <ul>
+                    <li><?= $mhs['id']; ?></li>
+                    <li><?= $mhs['nis']; ?></li>
                     <li><?= $mhs['nama']; ?></li>
-                    <li><?= $mhs['nrp']; ?></li>
+                    <li><?= $mhs['tanggal_lahir']; ?></li>
+                    <li><?= $mhs['waktu_lahir']; ?></li>
+                    <li><?= $mhs['n_mtk']; ?></li>
                 </ul>
             <?php endforeach; ?>
         </div>

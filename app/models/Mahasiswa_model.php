@@ -15,7 +15,7 @@ class Mahasiswa_model{
     private $stmt;
 
     public function __construct(){
-        $dsn = 'mysql:host=localhost;dbname=phpmvc';
+        $dsn = 'mysql:host=localhost;dbname=xiirpl1';
 
         try {
             $this->dbh = new PDO($dsn, 'root', '');
@@ -25,7 +25,7 @@ class Mahasiswa_model{
     }
 
     public function getAllMahasiswa(){
-    $this->stmt = $this->dbh->prepare('SELECT * FROM mahasiswa');
+    $this->stmt = $this->dbh->prepare('SELECT * FROM data_siswa');
     $this->stmt->execute();
     return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
 }
