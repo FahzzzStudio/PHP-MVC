@@ -11,6 +11,7 @@ class Mahasiswa_model{
     ]
     ];
     
+    // Datata
     private $dbh;
     private $stmt;
 
@@ -25,11 +26,22 @@ class Mahasiswa_model{
     }
 
     public function getAllMahasiswa(){
-    $this->stmt = $this->dbh->prepare('SELECT * FROM data_siswa');
-    $this->stmt->execute();
-    return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-}
+        $this->stmt = $this->dbh->prepare('SELECT * FROM data_siswa');
+        $this->stmt->execute();
+        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
+    public function tambahData($data) {
+        $query = "INSERT INTO data_siswa (nis, nama, n_mtk)
+            VALUES (:nis, :nama, :n_mtk)";
+        $this->stmt = $this->dbh->prepare($query);
+        $this->stmt->bindParam(':nis', $data['nis']);
+        $this->stmt->bindParam(':nama', $data['nama']);
+        $this->stmt->bindParam(':n_mtk', $data['n_mtk']);
+        $this->stmt->execute();
+        return $this->stmt->rowCount();
+    }
 
+    
+}
 ?>
