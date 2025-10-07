@@ -12,9 +12,9 @@ class Mahasiswa extends Controller {
     public function detail($id) {
         $data['judul'] = 'Mahasiswa';
         $data['mhs'] = $this->model('Mahasiswa_model')->getMahasiswaById($id);
-        $data->view('templates/header', $data);
-        $data->view('mahasiswa/detail', $data);
-        $data->view('templates/footer');
+        $this->view('templates/header', $data);
+        $this->view('mahasiswa/detail', $data);
+        $this->view('templates/footer');
     }
 
     public function tambah() {

@@ -11,7 +11,7 @@ class Mahasiswa_model{
     ]
     ];
     
-    // Datata
+    // Data
     private $dbh;
     private $stmt;
 
@@ -29,6 +29,13 @@ class Mahasiswa_model{
         $this->stmt = $this->dbh->prepare('SELECT * FROM data_siswa');
         $this->stmt->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function getMahasiswaById($id) {
+        $this->stmt = $this->dbh->prepare('SELECT * FROM data_siswa WHERE id = :id');
+        $this->stmt->bindParam(':id', $id);
+        $this->stmt->execute();
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function tambahData($data) {

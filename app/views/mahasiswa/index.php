@@ -40,17 +40,6 @@
                 </tr>
                 <?php endforeach; ?>
             </table>
-<br>
-            <!-- <?php foreach($data['mhs'] as $mhs) : ?>
-                <ul>
-                    <li><?= $mhs['id']; ?></li>
-                    <li><?= $mhs['nis']; ?></li>
-                    <li><?= $mhs['nama']; ?></li>
-                    <li><?= $mhs['tanggal_lahir']; ?></li>
-                    <li><?= $mhs['waktu_lahir']; ?></li>
-                    <li><?= $mhs['n_mtk']; ?></li>
-                </ul>
-            <?php endforeach; ?> -->
         </div>
     </div>
 </body>
