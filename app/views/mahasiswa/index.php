@@ -37,7 +37,8 @@
                     <td>
                         <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="btn btn-success btn-sm">Detail</a>
                         <a href="<?= BASEURL; ?>/mahasiswa/edit/<?= $mhs['id']; ?>" class="btn btn-info btn-sm">Edit</a>
-                        <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="btn btn-danger btn-sm">Hapus</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="btn btn-danger btn-sm"
+                            onclick="return confirm('Yakin untuk hapus data?');">Hapus</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

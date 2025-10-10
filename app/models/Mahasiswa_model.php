@@ -55,13 +55,22 @@ class Mahasiswa_model{
             nama = :nama,
             n_mtk = :n_mtk WHERE id = :id";
 
-    $this->stmt = $this->dbh->prepare($query);
-    $this->stmt->bindParam('nis', $data['nis']);
-    $this->stmt->bindParam('nama', $data['nama']);
-    $this->stmt->bindParam('n_mtk', $data['n_mtk']);
-    $this->stmt->bindParam('id', $data['id']);
-    $this->stmt->execute();
-    return $this->stmt->rowCount();
+        $this->stmt = $this->dbh->prepare($query);
+        $this->stmt->bindParam(':nis', $data['nis']);
+        $this->stmt->bindParam(':nama', $data['nama']);
+        $this->stmt->bindParam(':n_mtk', $data['n_mtk']);
+        $this->stmt->bindParam(':id', $data['id']);
+        $this->stmt->execute();
+        return $this->stmt->rowCount();
+    }
+
+    public function hapusDataMahasiswa($data) {
+        $query = "DELETE FROM data_siswa WHERE id = :id";
+        $this->stmt = $this->dbh->prepare($query);
+        $this->stmt->bindParam(':id', $id);
+        $this->stmt->execute();
+
+        return $this->stmt->rowCount();
     }
 }
 ?>

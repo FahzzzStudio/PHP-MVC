@@ -20,7 +20,7 @@
                 <a class="nav-link active" aria-current="page" href="../public/home/index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link active" href="../public/mahasiswa/index.php">Daftar Siswa</a>
+                <a class="nav-link active" href="../mahasiswa/">Daftar Siswa</a>
                 </li>
         </div>
     </div>

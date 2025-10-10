@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <h3>Edit Data Mahasiswa</h3>
-    <form action="<?= BASEURL; ?>/mahasiswa/edit" method="post">
+    <form action="<?= BASEURL; ?>/mahasiswa/update" method="post">
         <input type="hidden" name="id" value="<?= $data['mhs']['id']; ?>">
 
         <div class="mb-3">
