@@ -49,6 +49,19 @@ class Mahasiswa_model{
         return $this->stmt->rowCount();
     }
 
-    
+    public function ubahDataMahasiswa($data) {
+        $query = "UPDATE data_siswa SET
+            nis = :nis,
+            nama = :nama,
+            n_mtk = :n_mtk WHERE id = :id";
+
+    $this->stmt = $this->dbh->prepare($query);
+    $this->stmt->bindParam('nis', $data['nis']);
+    $this->stmt->bindParam('nama', $data['nama']);
+    $this->stmt->bindParam('n_mtk', $data['n_mtk']);
+    $this->stmt->bindParam('id', $data['id']);
+    $this->stmt->execute();
+    return $this->stmt->rowCount();
+    }
 }
 ?>
